@@ -1,6 +1,7 @@
+/*  Apping some css */
+
+
 .App{
-
-
   background:url('https://t4.ftcdn.net/jpg/01/16/88/37/360_F_116883786_wuckft1sNw1ouQfJ6FuquZnxea3qBlxy.jpg');
   padding-left:5rem;
   padding-right:5rem;
@@ -8,7 +9,6 @@
   background-size:cover;
   min-height: 100vh;
   height: 100%;
-
   background-repeat: no-repeat;
 }
 

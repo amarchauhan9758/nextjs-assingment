@@ -96,14 +96,14 @@ function Post() {
     axios.get("https://dummyjson.com/posts")      // using aixos library for fetech data from api
       .then(response => {
         setData(response.data.posts)             // store  the data in state
-      } )
+      })
       .catch(error => console.log(error))     // if catch any error
   }, [])
   // console.log(data)
   return (
     <>
 
-      {/* navbar  section  */}
+      {/* ------------------------------------------------------Navbar  section---------------------------------------------------------------  */}
 
 
       <AppBar position="static">
@@ -123,7 +123,7 @@ function Post() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-        Detrator
+            Detrator
           </Typography>
           <Search>
             <SearchIconWrapper>
@@ -139,9 +139,9 @@ function Post() {
       </AppBar>
 
 
-  {/* card section */}
+      {/*--------------------------- Card section------------------------------------------- */}
 
-{/* Using  some unnecessary material Ui icon or tag for UI looked better */}
+      {/* Using  some unnecessary material Ui icon or tag for UI looked better */}
       <Box sx={{ flexGrow: 1, paddingTop: "32px", }}>
 
         <Grid container sx={{ display: "flex", justifyContent: "center", alignItems: 'flex-start' }} spacing={2}>
@@ -153,7 +153,7 @@ function Post() {
                 return value
               }
             }).map((element, index) => {
-              return    <Card key={element.id} sx={{ maxWidth: "400px", minHeight: '300px', borderRadius: "10px", margin: "12px" }}>
+              return <Card key={element.id} sx={{ maxWidth: "400px", minHeight: '300px', borderRadius: "10px", margin: "12px" }}>
                 <CardHeader
                   avatar={
                     <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -183,30 +183,30 @@ function Post() {
                     onClick={() => handleExpandClick(index)}
                     aria-expanded={expandedId === index}
                     aria-label="show more"
-
                   >
- <Tooltip title="Read more">
-
-                    <ExpandMoreIcon color="primary" />
- </Tooltip>
-
-                  </ExpandMore>
-
-
-
-
+                    <Tooltip title="Read more">
+                     <ExpandMoreIcon color="primary" />
+                    </Tooltip>
+                   </ExpandMore>
                 </CardActions>
+
+
+
+
+
+  {/*--------------------------  Collapse Section   it show when  click on the down arrow icon----------------------------------  */}
+
                 <Collapse in={expandedId === index} timeout="auto" unmountOnExit>
                   <CardContent>
                     <Typography paragraph>User id: {element.id}</Typography>
                     <Typography component="h3" paragraph>{element.body}</Typography>
                     <Typography paragraph>Tags: {element.tags.join(" ")}</Typography>
-
-
                   </CardContent>
                 </Collapse>
-
               </Card>
+
+
+
 
             })
           }
